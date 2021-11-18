@@ -16,7 +16,7 @@ public class CowGymnastics {
 		for(int i=0; i<k; i++) {
 			list.add(new ArrayList<Integer>());
 			for(int j=0; j<n; j++) {
-				list.get(i).add(sc.nextInt());  System.out.print(list.get(i).get(j));
+				list.get(i).add(sc.nextInt());  //System.out.print(list.get(i).get(j));
 			}
 			//System.out.println();
 		}

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 public class WhereAmI {
-
+//yo this works
 	public static void main(String[] args) throws IOException {
 	    //BufferedReader br = new BufferedReader(new FileReader("whereami.in"));
 	    Scanner sc = new Scanner(new File("whereami.in"));
