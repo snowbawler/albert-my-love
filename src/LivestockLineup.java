@@ -8,18 +8,25 @@ public class LivestockLineup {
 //		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 		BufferedReader  br = new  BufferedReader(new  FileReader ("lineup.in"));
 		PrintWriter  pw = new  PrintWriter(new  BufferedWriter(new  FileWriter("lineup.out")));
-
-		int N = br.read();
-		System.out.print(N);
-//		StringTokenizer st = new StringTokenizer(br.readLine());
-//		ArrayList<String> pair = new ArrayList<String>();
-//		for(int i=0; i<N; i++) {
-//			pair.add(st.nextToken());
-//			pair.add(st.nextToken(" must be milked beside "));
-//			st = new StringTokenizer(br.readLine());
-//		}
-//		
-//		System.out.print(pair.toString());
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		ArrayList<ArrayList<String>> pairs = new ArrayList<ArrayList<String>>();
+		
+		String[] s = {"Beatrice", "Belinda", "Bella", "Bessie", "Betsy", "Blue", "Buttercup", "Sue"};
+		
+		int N = Integer.parseInt(st.nextToken());
+		
+		for(int i=0; i<N; i++) {
+			st = new StringTokenizer(br.readLine());
+			pairs.add(new ArrayList<String>());
+			pairs.get(i).add(st.nextToken());
+			for(int j=0; j<4; j++) {
+				st.nextToken();
+			}
+			pairs.get(i).add(st.nextToken()); System.out.print(pairs.get(i));
+		}
+		
+	
 		
 		
 		
