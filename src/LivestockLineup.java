@@ -23,11 +23,14 @@ public class LivestockLineup {
 			for(int j=0; j<4; j++) {
 				st.nextToken();
 			}
-			pairs.get(i).add(st.nextToken()); System.out.print(pairs.get(i));
+			pairs.get(i).add(st.nextToken()); //System.out.print(pairs.get(i));
 		}
 		
-	
-		
+		for(int i=0; i<N; i++) {	
+			for(int j=0; j<2; j++) {
+				if(pairs.get(i).contains
+			}
+		}
 		
 		
 		pw.close();
