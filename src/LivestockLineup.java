@@ -23,15 +23,39 @@ public class LivestockLineup {
 			for(int j=0; j<4; j++) {
 				st.nextToken();
 			}
-			pairs.get(i).add(st.nextToken()); System.out.print(pairs.get(i));
+			pairs.get(i).add(st.nextToken()); System.out.println(pairs.get(i));
 		}
 		
-		for(int i=0; i<N; i++) {	
-			for(int j=0; j<2; j++) {
-				//edit 11
+
+		
+		int sto = 0;
+		int sto1 = 0;
+		for(int i=0; i<pairs.size(); i++) {
+			for(int j=1; i<pairs.size(); i++) {
+				if(pairs.get(i).contains(pairs.get(j).get(0))) {sto = 0; sto1 = 1;}
+				else if(pairs.get(i).contains(pairs.get(j).get(1))) {sto = 1; sto1 = 0;}
+				else break;
+				if(pairs.get(i).get(0).equals(pairs.get(j).get(sto1))) pairs.get(i).add(0, pairs.get(j).get(sto));
+				else pairs.get(i).add(pairs.get(j).get(sto));
+				pairs.remove(j);
+				j--;
 			}
 		}
 		
+		for(int i=0; i<pairs.size(); i++) {
+			System.out.print(pairs.get(i));
+		}
+		
+		ArrayList<String> ret = new ArrayList<>();
+		for(int i=0; i<pairs.size(); i++) {
+			if(pairs.get(i).get(0).compareTo(pairs.get(i).get(pairs.get(i).size()-1))>0) {
+				for(int j = pairs.get(i).size()-1; j>=0; j--) {
+					ret.add(pairs.get(i).get(j));
+				}
+			}
+		}
+		
+		System.out.print(ret);
 		
 		pw.close();
 		br.close();
