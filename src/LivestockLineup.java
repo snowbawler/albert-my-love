@@ -23,27 +23,29 @@ public class LivestockLineup {
 			for(int j=0; j<4; j++) {
 				st.nextToken();
 			}
-			pairs.get(i).add(st.nextToken()); System.out.println(pairs.get(i));
+			pairs.get(i).add(st.nextToken()); 
+System.out.print(pairs.get(i));
 		}
 		
 System.out.println();
 		
 
-		for(int i=0; i<pairs.size(); i++) {
-			for(int j=1; j<pairs.size(); j++) {
-				if(pairs.get(i).indexOf(pairs.get(j).get(0)) == 0)
-					pairs.get(i).add(0, pairs.get(j).get(1));
-				if(pairs.get(i).indexOf(pairs.get(j).get(1))==0)
-					pairs.get(i).add(0, pairs.get(j).get(0));
-				if(pairs.get(i).indexOf(pairs.get(j).get(0))==1)
-					pairs.get(i).add(pairs.get(j).get(1));
-				if(pairs.get(i).indexOf(pairs.get(j).get(0))==1)
-					pairs.get(i).add(pairs.get(j).get(0));
+		for(int i=0; i<pairs.size()-1; i++) {
+			for(int j=i+1; j<pairs.size(); j++) {
+				System.out.print(pairs.get(i));
+				if(pairs.get(i).indexOf(pairs.get(j).get(0))==0) {
+					pairs.get(i).add(0, pairs.get(j).get(1)); pairs.remove(j); j--;}
+				if(pairs.get(i).indexOf(pairs.get(j).get(1))==0) {
+					pairs.get(i).add(0, pairs.get(j).get(0)); pairs.remove(j); j--;}
+				if(pairs.get(i).indexOf(pairs.get(j).get(0))==1) {
+					pairs.get(i).add(pairs.get(j).get(1)); pairs.remove(j); j--;}
+				if(pairs.get(i).indexOf(pairs.get(j).get(1))==1) {
+					pairs.get(i).add(pairs.get(j).get(0)); pairs.remove(j); j--;}
 			}
 		}
 		
 		for(int i1=0; i1<pairs.size(); i1++) {
-			System.out.print(pairs.get(i1));
+System.out.print(pairs.get(i1));
 		}
 		
 System.out.println();
@@ -61,7 +63,7 @@ System.out.println();
 		}
 		
 		for(int i=0; i<pairs.size(); i++) {
-			System.out.print(pairs.get(i));
+System.out.print(pairs.get(i));
 		}
 System.out.println();
 		
@@ -83,7 +85,7 @@ System.out.println();
 			}
 		}
 		
-		System.out.print(ret);
+System.out.print(ret);
 		
 		for(int i=0; i<ret.size(); i++) {
 			pw.println(ret.get(i));
