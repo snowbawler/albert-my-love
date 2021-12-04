@@ -28,22 +28,22 @@ public class LivestockLineup {
 		
 System.out.println();
 		
-		int sto = 0;
-		int sto1 = 0;
+
 		for(int i=0; i<pairs.size(); i++) {
-			for(int j=1; i<pairs.size(); i++) {
-				if(pairs.get(i).contains(pairs.get(j).get(0))) {sto = 0; sto1 = 1;}
-				else if(pairs.get(i).contains(pairs.get(j).get(1))) {sto = 1; sto1 = 0;}
-				else break;
-				if(pairs.get(i).get(0).equals(pairs.get(j).get(sto1))) pairs.get(i).add(0, pairs.get(j).get(sto));
-				else pairs.get(i).add(pairs.get(j).get(sto1));
-				pairs.remove(j);
-				j--;
+			for(int j=1; j<pairs.size(); j++) {
+				if(pairs.get(i).indexOf(pairs.get(j).get(0)) == 0)
+					pairs.get(i).add(0, pairs.get(j).get(1));
+				if(pairs.get(i).indexOf(pairs.get(j).get(1))==0)
+					pairs.get(i).add(0, pairs.get(j).get(0));
+				if(pairs.get(i).indexOf(pairs.get(j).get(0))==1)
+					pairs.get(i).add(pairs.get(j).get(1));
+				if(pairs.get(i).indexOf(pairs.get(j).get(0))==1)
+					pairs.get(i).add(pairs.get(j).get(0));
 			}
 		}
 		
-		for(int i=0; i<pairs.size(); i++) {
-			System.out.print(pairs.get(i));
+		for(int i1=0; i1<pairs.size(); i1++) {
+			System.out.print(pairs.get(i1));
 		}
 		
 System.out.println();
