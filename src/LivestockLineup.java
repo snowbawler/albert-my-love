@@ -29,18 +29,22 @@ System.out.print(pairs.get(i));
 		
 System.out.println();
 		
-
+	
 		for(int i=0; i<pairs.size()-1; i++) {
-			for(int j=i+1; j<pairs.size(); j++) {
-				System.out.print(pairs.get(i));
-				if(pairs.get(i).indexOf(pairs.get(j).get(0))==0) {
-					pairs.get(i).add(0, pairs.get(j).get(1)); pairs.remove(j); j--;}
-				if(pairs.get(i).indexOf(pairs.get(j).get(1))==0) {
-					pairs.get(i).add(0, pairs.get(j).get(0)); pairs.remove(j); j--;}
-				if(pairs.get(i).indexOf(pairs.get(j).get(0))==1) {
-					pairs.get(i).add(pairs.get(j).get(1)); pairs.remove(j); j--;}
-				if(pairs.get(i).indexOf(pairs.get(j).get(1))==1) {
-					pairs.get(i).add(pairs.get(j).get(0)); pairs.remove(j); j--;}
+			boolean pair = true;
+			while(pair) {
+				pair = false;
+				for(int j=i+1; j<pairs.size(); j++) {
+System.out.println(pairs.get(i));
+					if(pairs.get(i).indexOf(pairs.get(j).get(0))==0) {
+						pairs.get(i).add(0, pairs.get(j).get(1)); pairs.remove(j); j--; pair = true;}
+					else if(pairs.get(i).indexOf(pairs.get(j).get(1))==0) {
+						pairs.get(i).add(0, pairs.get(j).get(0)); pairs.remove(j); j--; pair = true;}
+					else if(pairs.get(i).indexOf(pairs.get(j).get(0))==1) {
+						pairs.get(i).add(pairs.get(j).get(1)); pairs.remove(j); j--; pair = true;}
+					else if(pairs.get(i).indexOf(pairs.get(j).get(1))==1) {
+						pairs.get(i).add(pairs.get(j).get(0)); pairs.remove(j); j--; pair = true;}
+				}
 			}
 		}
 		
@@ -48,7 +52,7 @@ System.out.println();
 System.out.print(pairs.get(i1));
 		}
 		
-System.out.println();
+//System.out.println();
 		
 		ArrayList<String> store = new ArrayList<>();
 		for(int i=0; i<pairs.size(); i++) {
@@ -63,9 +67,9 @@ System.out.println();
 		}
 		
 		for(int i=0; i<pairs.size(); i++) {
-System.out.print(pairs.get(i));
+//System.out.print(pairs.get(i));
 		}
-System.out.println();
+//System.out.println();
 		
 		ArrayList<String> ret = new ArrayList<>();
 		boolean contain = false;
@@ -85,7 +89,7 @@ System.out.println();
 			}
 		}
 		
-System.out.print(ret);
+//System.out.print(ret);
 		
 		for(int i=0; i<ret.size(); i++) {
 			pw.println(ret.get(i));
