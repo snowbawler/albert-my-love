@@ -2,6 +2,15 @@ import java.io.*;
 import java.util.*;
 
 public class LivestockLineup {
+	static void reverse(ArrayList<String> list) {
+		ArrayList<String> sto = new ArrayList<String>();
+		for(int i=list.size()-1; i>=0; i--) {
+			sto.add(list.get(i));
+		}
+		list.clear();
+		list.addAll(sto);
+	}
+
 	
 	public static void main(String[] args) throws IOException {
 //		BufferedReader br = new BufferedReader(new InputStreamReader(Sysetem.in));
@@ -24,32 +33,56 @@ public class LivestockLineup {
 				st.nextToken();
 			}
 			pairs.get(i).add(st.nextToken()); 
-System.out.print(pairs.get(i));
+//System.out.print(pairs.get(i));
 		}
 		
-System.out.println();
-		
-	
+//System.out.println();
+
+
 		for(int i=0; i<pairs.size()-1; i++) {
 			boolean pair = true;
 			while(pair) {
 				pair = false;
 				for(int j=i+1; j<pairs.size(); j++) {
-System.out.println(pairs.get(i));
-					if(pairs.get(i).indexOf(pairs.get(j).get(0))==0) {
-						pairs.get(i).add(0, pairs.get(j).get(1)); pairs.remove(j); j--; pair = true;}
-					else if(pairs.get(i).indexOf(pairs.get(j).get(1))==0) {
-						pairs.get(i).add(0, pairs.get(j).get(0)); pairs.remove(j); j--; pair = true;}
-					else if(pairs.get(i).indexOf(pairs.get(j).get(0))==1) {
-						pairs.get(i).add(pairs.get(j).get(1)); pairs.remove(j); j--; pair = true;}
-					else if(pairs.get(i).indexOf(pairs.get(j).get(1))==1) {
-						pairs.get(i).add(pairs.get(j).get(0)); pairs.remove(j); j--; pair = true;}
+					
+					String firstI = pairs.get(i).get(0);
+					String lastI = pairs.get(i).get(pairs.get(i).size()-1);
+					String firstJ = pairs.get(j).get(0);
+					String lastJ = pairs.get(j).get(pairs.get(j).size()-1);
+//System.out.println(pairs.get(i));
+					if(firstI.equals(firstJ)) {
+						pairs.get(j).remove(0);
+						reverse(pairs.get(j));
+						pairs.get(i).addAll(0, pairs.get(j)); 
+						pairs.remove(j); 
+						j--; 
+						pair = true;
+					}
+					else if(firstI.equals(lastJ)) {
+						pairs.get(j).remove(pairs.get(j).size()-1);
+						pairs.get(i).addAll(0, pairs.get(j)); 
+						pairs.remove(j); 
+						j--; 
+						pair = true;}
+					else if(lastI.equals(firstJ)) {
+						pairs.get(j).remove(0);
+						pairs.get(i).addAll(pairs.get(j)); 
+						pairs.remove(j); 
+						j--; 
+						pair = true;}
+					else if(lastI.equals(lastJ)) {
+						pairs.get(j).remove(pairs.get(j).remove(pairs.get(j).size()-1));
+						reverse(pairs.get(j));
+						pairs.get(i).addAll(pairs.get(j)); 
+						pairs.remove(j); 
+						j--; 
+						pair = true;}
 				}
 			}
 		}
 		
 		for(int i1=0; i1<pairs.size(); i1++) {
-System.out.print(pairs.get(i1));
+//System.out.print(pairs.get(i1));
 		}
 		
 //System.out.println();
