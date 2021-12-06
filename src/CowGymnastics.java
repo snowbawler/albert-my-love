@@ -36,6 +36,7 @@ public class CowGymnastics {
 			}
 		}
 		
+		//push
 		pw.print(out1);
 	
 		sc.close();
