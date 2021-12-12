@@ -4,10 +4,10 @@ import java.io.*;
 public class highCardWins {
 	public static void main(String[] args) throws IOException{
 		
-		BufferedReader br = new BufferedReader(new FileReader("highcard.in"));
-		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("highcard.out")));
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+//		BufferedReader br = new BufferedReader(new FileReader("highcard.in"));
+//		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("highcard.out")));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int n = Integer.parseInt(st.nextToken());
