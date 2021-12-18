@@ -29,14 +29,14 @@
 		
 		
 		
-// 		pw.print(out+1);
+ 		pw.print(out+1);
 
 	    
-// 	    //br.close();
-// 	    sc.close();
-// 	    pw.close();
+ 	    //br.close();
+ 	    sc.close();
+ 	    pw.close();
 
 
-// 	}
+ 	}
 
-// }
+ }
