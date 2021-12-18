@@ -1,17 +1,17 @@
-// import java.io.*;
-// import java.util.*;
+import java.io.*;
+import java.util.*;
 
-// public class [file name] {
+public class [file name] {
 	
-// 	public static void main(String[] args) throws IOException {
-// 		BufferedReader br = new BufferedReader(new InputStreamReader(Sysetem.in));
-// 		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-// //		BufferedReader  br = new  BufferedReader(new  FileReader ("[ problem ].in"));
-// //		PrintWriter  pw = new  PrintWriter(new  BufferedWriter(new  FileWriter("[ problem ].out")));
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(Sysetem.in));
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+//		BufferedReader  br = new  BufferedReader(new  FileReader ("[ problem ].in"));
+//		PrintWriter  pw = new  PrintWriter(new  BufferedWriter(new  FileWriter("[ problem ].out")));
 		
 		
-// //	solution code goes here
+//	solution code goes here
 		
-// 		pw.close();
-// 	}
-// }
+		pw.close();
+	}
+}
