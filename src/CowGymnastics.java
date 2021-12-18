@@ -2,6 +2,7 @@
 import java.util.*;
 import java.io.*;
 public class CowGymnastics {
+//commit
 	public static void main(String[] args) throws IOException {
 	    //BufferedReader br = new BufferedReader(new FileReader("whereami.in"));
 	    Scanner sc = new Scanner(new File("gymnastics.in"));
