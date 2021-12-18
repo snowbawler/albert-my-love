@@ -6,7 +6,7 @@ public class CowGymnastics {
 	    //BufferedReader br = new BufferedReader(new FileReader("whereami.in"));
 	    Scanner sc = new Scanner(new File("gymnastics.in"));
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("gymnastics.out")));
-		
+	 
 		int k = sc.nextInt();
 		int n = sc.nextInt();
 		ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
