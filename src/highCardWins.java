@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class highCardWins {
+public class HighCardWins {
 //commit
 	public static void main(String[] args) throws IOException{
 		
