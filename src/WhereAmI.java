@@ -7,7 +7,7 @@
  	    Scanner sc = new Scanner(new File("whereami.in"));
  		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("whereami.out")));
 
- 		int size = sc.nextInt();
+ 		sc.nextInt();
  		String str = sc.next();
  		ArrayList<String> sto = new ArrayList<String>(str.length()*str.length()-1);
  		int out = 0;
